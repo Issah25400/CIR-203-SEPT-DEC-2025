@@ -1,0 +1,61 @@
+1️⃣ Create a list of 10 delivery routes
+`python
+routes = [
+    "Nairobi-CBD",
+    "Mombasa-Port",
+    "Kisumu-Lake",
+    "Nakuru-Rift",
+    "Eldoret-Highway",
+    "Nyeri-Hills",
+    "Nanyuki-Plains",
+    "Kericho-Tea",
+    "Malindi-Coast",
+    "Thika-Industrial"
+]
+
+print("Initial routes:", routes)
+`
+
+---
+
+2️⃣ Append a new route and remove a discontinued one
+`python
+
+Append new route
+routes.append("Garissa-Desert")
+
+Remove discontinued route (example: "Thika-Industrial")
+routes.remove("Thika-Industrial")
+
+print("Updated routes:", routes)
+`
+
+---
+
+3️⃣ Sort alphabetically and reverse
+`python
+routes.sort()        # Sort alphabetically
+routes.reverse()     # Reverse order
+
+print("Sorted & reversed routes:", routes)
+`
+
+---
+
+4️⃣ Count how many routes start with “N”
+`python
+count_N = sum(1 for r in routes if r.startswith("N"))
+print("Routes starting with 'N':", count_N)
+`
+
+---
+
+5️⃣ List comprehension for routes longer than 10 characters
+`python
+long_routes = [r for r in routes if len(r) > 10]
+print("Routes longer than 10 characters:", long_routes)
+`
+
+---
+
+

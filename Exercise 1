@@ -1,0 +1,65 @@
+
+import numpy as np
+
+Example transaction volumes (random integers for illustration)
+transactions = np.array([
+    [120, 150, 130, 160, 170, 180],  # Branch 1
+    [200, 210, 190, 220, 230, 240],  # Branch 2
+    [90,  100, 95,  110, 105, 115],  # Branch 3
+    [300, 310, 320, 330, 340, 350]   # Branch 4
+])
+
+print("Transaction Volumes:\n", transactions)
+`
+
+---
+
+2️⃣ Total transactions per branch
+`python
+branch_totals = np.sum(transactions, axis=1)
+print("Total transactions per branch:", branch_totals)
+`
+- axis=1 → sum across columns (months).
+
+---
+
+3️⃣ Identify branch with highest total transactions
+`python
+highestbranch = np.argmax(branchtotals) + 1  # +1 for human-readable branch index
+print("Branch with highest total transactions:", highest_branch)
+`
+- np.argmax returns the index of the maximum value.
+
+---
+
+4️⃣ Average monthly transaction volume across all branches
+`python
+average_monthly = np.mean(transactions, axis=0)
+print("Average monthly transaction volume:", average_monthly)
+`
+- axis=0 → mean across rows (branches).
+
+---
+
+5️⃣ Reshape to 3×8 format
+`python
+reshaped = transactions.reshape(3, 8)
+print("Reshaped array (3x8):\n", reshaped)
+`
+
+Implications of reshaping:
+- Reshaping does not change the data, only how it is organized.
+- Original shape: (4, 6) → 24 elements.
+- New shape: (3, 8) → still 24 elements, but grouped differently.
+- Meaning: Branch/month interpretation is lost; the data is now just a flat sequence reorganized into a new grid.
+
+---
+
+✅ Marks breakdown:
+- Step 1: 4 marks → correct creation of array.  
+- Step 2: 4 marks → correct summation per branch.  
+- Step 3: 4 marks → identification of max branch.  
+- Step 4: 4 marks → average per month.  
+- Step 5: 4 marks → reshape + explanation.  
+
+---lf?
